@@ -94,4 +94,5 @@ public class ExampleUnitTest {
     public void powNegativeZeroFirstNegativeIntegerSecond() {
         assertEquals(Double.NEGATIVE_INFINITY, mCalculator.pow(-0d, -1), 0);
     }
+
 }
