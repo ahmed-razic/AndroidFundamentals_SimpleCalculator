@@ -1,5 +1,6 @@
 package com.example.android.simplecalculator;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,8 +11,50 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    private Calculator mCalculator;
+
+    @Before
+    public void setUp() {
+        mCalculator = new Calculator();
+    }
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void addTwoPositiveDoubles() {
+        assertEquals(5, mCalculator.add(2.0, 3.0), 0);
+    }
+
+    @Test
+    public void addTwoNegativeDoubles() {
+        assertEquals(-3d, mCalculator.add(-2d, -1d), 0);
+    }
+
+    @Test
+    public void addTwoFloats() {
+        assertEquals(2.222, mCalculator.add(1.111f, 1.111f), 0.002);
+    }
+
+    @Test
+    public void subTwoDoubles() {
+        assertEquals(2d, mCalculator.sub(3d, 1d), 0);
+    }
+
+    @Test
+    public void subTwoNegativeDoubles() {
+        assertEquals(-16d, mCalculator.sub(1d, 17d), 0);
+    }
+
+    @Test
+    public void mulTwoDoubles() {
+        assertEquals(30d, mCalculator.mul(3d, 10d), 0);
+    }
+
+    @Test
+    public void divTwoDoubles() {
+        assertEquals(2d, mCalculator.div(32d, 16d), 0);
+    }
+
+    @Test
+    public void divDoubleWithZero() {
+        assertEquals(Double.POSITIVE_INFINITY, mCalculator.div(22d, 0), 0);
     }
 }
