@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/type_operand_one_hint"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
         android:importantForAutofill="no" />
 
     <EditText
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/type_operand_two_hint"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
         android:autofillHints="" />
 
     <RelativeLayout
@@ -62,6 +62,15 @@
             android:layout_toEndOf="@id/operation_add_btn"
             android:onClick="onMul"
             android:text="@string/mul_operation_text"/>
+
+        <Button
+            android:id="@+id/operation_mul_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/operation_add_btn"
+            android:layout_toEndOf="@id/operation_mul_btn"
+            android:onClick="onPow"
+            android:text="@string/pow_operation_text" />
 
     </RelativeLayout>
 

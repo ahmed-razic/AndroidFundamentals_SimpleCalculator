@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         calculate(Calculator.Operator.MUL);
     }
 
+    public void onPow(View view) { calculate(Calculator.Operator.POW); }
+
     private static Double getOperand(EditText operandEditText) {
         String operandText = operandEditText.getText().toString();
         return  Double.valueOf(operandText);
@@ -84,8 +86,10 @@ public class MainActivity extends AppCompatActivity {
             case MUL:
                 result = String.valueOf(mCalculator.mul(operandOne, operandTwo));
                 break;
+            case POW:
+                result = String.valueOf(mCalculator.pow(operandOne, operandTwo));
+                break;
         }
         mResultTextView.setText(result);
-
     }
 }

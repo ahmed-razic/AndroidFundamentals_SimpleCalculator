@@ -2,7 +2,7 @@ package com.example.android.simplecalculator;
 
 public class Calculator {
     
-    public enum Operator {ADD, SUB, DIV, MUL};
+    public enum Operator {ADD, SUB, DIV, MUL, POW};
 
     public double add(double firstOperand, double secondOperand) {
         return firstOperand + secondOperand;
@@ -18,5 +18,9 @@ public class Calculator {
 
     public double mul(double firstOperand, double secondOperand) {
         return firstOperand * secondOperand;
+    }
+
+    public double pow(double firstOperand, double secondOperand) {
+        return java.lang.Math.pow(firstOperand, secondOperand);
     }
 }

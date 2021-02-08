@@ -1,5 +1,7 @@
 package com.example.android.simplecalculator;
 
+import android.util.Log;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class ExampleUnitTest {
         mCalculator = new Calculator();
     }
 
-    @Test
+/*    @Test
     public void addTwoPositiveDoubles() {
         assertEquals(5, mCalculator.add(2.0, 3.0), 0);
     }
@@ -56,5 +58,40 @@ public class ExampleUnitTest {
     @Test
     public void divDoubleWithZero() {
         assertEquals(Double.POSITIVE_INFINITY, mCalculator.div(22d, 0), 0);
+    }*/
+
+    @Test
+    public void powPositiveInteger() {
+        assertEquals(9, mCalculator.pow(3, 2), 0);
+    }
+
+    @Test
+    public void powNegativeFirstInteger() {
+        assertEquals(-27, mCalculator.pow(-3, 3), 0);
+    }
+
+    @Test
+    public void powNegativeSecondInteger() {
+        assertEquals(0.25, mCalculator.pow(2, -2), 0);
+    }
+
+    @Test
+    public void powZeroFirstPositiveSecondInteger() {
+        assertEquals(0, mCalculator.pow(0, 7), 0);
+    }
+
+    @Test
+    public void powPositiveFirstZeroSecondInteger() {
+        assertEquals(1, mCalculator.pow(134, 0), 0);
+    }
+
+    @Test
+    public void powZeroFirstNegativeOneSecond() {
+        assertEquals(Double.POSITIVE_INFINITY, mCalculator.pow(0, -1), 0);
+    }
+
+    @Test
+    public void powNegativeZeroFirstNegativeIntegerSecond() {
+        assertEquals(Double.NEGATIVE_INFINITY, mCalculator.pow(-0d, -1), 0);
     }
 }
